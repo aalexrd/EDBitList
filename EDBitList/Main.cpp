@@ -4,7 +4,11 @@
 int main(int argc, char* argv[])
 {
 	if (argc == 1 || argc > 2)
-		return 0;
+		return -1;
+	std::string parameter = argv[1];
+	for (char x : parameter)
+		if (!isdigit(x))
+			return -2;
 	int i = atoi(argv[1]);
 	bool isSigned = i < 0 ? true : false;
 	if (isSigned)
@@ -42,4 +46,5 @@ int main(int argc, char* argv[])
 		}
 	}
 	std::cout << list.toString();
+	return 0;
 }
