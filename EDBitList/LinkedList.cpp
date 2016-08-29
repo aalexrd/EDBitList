@@ -153,15 +153,15 @@ template <class T>
 int LinkedList<T>::indexOf(const T& t) const
 {
 	Node<T>* iterator = first;
-	int i = -1;
+	int i = 0;
 	while (iterator)
 	{
-		++i;
 		if (iterator->getData() == t)
 			return i;
 		iterator = iterator->getNext();
+		++i;
 	}
-	return i;
+	return -1;
 }
 
 template <class T>
